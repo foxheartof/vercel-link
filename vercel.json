@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/visitar",
+      "destination": "https://foxheartof.github.io/",
+      "statusCode": 302
+    }
+  ]
+}
