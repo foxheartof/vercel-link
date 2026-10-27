@@ -1,26 +1,79 @@
 <!doctype html>
 <html lang="es-MX">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#120c11" />
-    <meta name="description" content="Visita el sitio oficial de FoxHeart para consultar información y opciones de compra." />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_MX" />
-    <meta property="og:title" content="FoxHeart | Información y boletos" />
-    <meta property="og:description" content="Visita el sitio oficial de FoxHeart para conocer todos los detalles." />
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/styles.css" />
-    <title>FoxHeart | Información y boletos</title>
-  </head>
-  <body>
-    <main class="page">
-      <a class="cta" href="/visitar" aria-label="Ver información y comprar boletos en el sitio de FoxHeart">
-        <span>Ver información y comprar boletos</span>
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-          <path d="M5 12h14m-6-6 6 6-6 6" />
-        </svg>
-      </a>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#120c11">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Meet & Greet de FoxHeart en MiYu Erocon. Consulta la información, compra tu boleto o contacta por Telegram.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="FoxHeart | Meet & Greet">
+  <meta property="og:description" content="Información, boletos y contacto para el Meet & Greet de FoxHeart.">
+  <meta property="og:image" content="https://foxheartof.github.io/assets/hero-main.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <title>FoxHeart | Meet & Greet</title>
+</head>
+<body>
+  <main class="page">
+    <section class="portal" aria-labelledby="event-title">
+      <div class="portal__inner">
+        <!-- Se reutiliza el logo auténtico de la web oficial; si no carga,
+             se muestra un recurso de respaldo que vive en este repositorio. -->
+        <div class="brand" aria-label="FoxHeart">
+          <img class="brand__logo"
+               src="https://foxheartof.github.io/assets/logo.png"
+               alt="Logo de FoxHeart"
+               width="1210"
+               height="1027"
+               fetchpriority="high"
+               onerror="this.onerror=null;this.src='./assets/logo-fallback.svg'">
+        </div>
+
+        <p class="eyebrow"><span class="eyebrow__star" aria-hidden="true">✦</span> FOXHEART PRESENTA <span class="eyebrow__star" aria-hidden="true">✦</span></p>
+        <h1 id="event-title" class="heading">Meet<span class="heading__amp">&amp;</span>Greet</h1>
+        <p class="intro">Toda la información de nuestro encuentro especial, en un solo lugar.</p>
+
+        <nav class="actions" aria-label="Enlaces del Meet & Greet">
+          <a class="action action--hero" href="https://foxheartof.github.io/" aria-label="Ver información del Meet & Greet de FoxHeart">
+            <span class="action__hero-copy">
+              <span class="action__hero-text">Ver Información</span>
+              <span class="action__hero-hint">Descubre todos los detalles</span>
+            </span>
+            <span class="action__hero-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12h16m-7-7 7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+
+          <div class="actions__secondary">
+            <a class="action action--buy" href="https://mpago.la/1xB6cLS" target="_blank" rel="noopener noreferrer" aria-label="Comprar boleto en Mercado Pago (abre una nueva pestaña)">
+              <span class="action__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 8h16l-1.1 12H5.1L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/>
+                </svg>
+              </span>
+              <span class="action__label">Comprar</span>
+              <svg class="action__external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg>
+            </a>
+
+            <a class="action action--telegram" href="https://t.me/FoxHeart_OF" target="_blank" rel="noopener noreferrer" aria-label="Contactar a FoxHeart por Telegram (abre una nueva pestaña)">
+              <span class="action__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m21.5 3.5-3.1 16.1c-.1.6-.6.8-1.1.5l-5-3.7-2.5 2.4c-.3.3-.5.5-1 .5l.7-5.1L19 5.5 7.2 13.3l-5.1-1.6c-.7-.2-.7-.7.2-1.1L20.4 3c.8-.3 1.4.2 1.1.5Z"/>
+                </svg>
+              </span>
+              <span class="action__label">Contactar por Telegram</span>
+              <svg class="action__external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16 16 8M9 8h7v7"/></svg>
+            </a>
+          </div>
+        </nav>
+        <p class="footnote"><span class="footnote__diamond" aria-hidden="true">✧</span> ENLACES OFICIALES DE FOXHEART <span class="footnote__diamond" aria-hidden="true">✧</span></p>
+      </div>
+    </section>
+  </main>
+</body>
 </html>

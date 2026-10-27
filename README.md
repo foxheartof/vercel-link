@@ -1,43 +1,68 @@
-# 🦊 FoxHeart — micrositio de acceso
+# FoxHeart — Meet & Greet · Micrositio de enlaces
 
-Micrositio estático creado para **FoxHeart** con un único propósito: permitir a los visitantes llegar rápidamente a la página oficial, donde pueden encontrar toda la información y las opciones de compra.
+Landing de una pantalla para presentar los enlaces oficiales del Meet & Greet de FoxHeart. Actualización del repositorio público [`foxheartof/vercel-link`](https://github.com/foxheartof/vercel-link), preparada para Vercel y compatible también con GitHub Pages.
 
-**Destino oficial:** https://foxheartof.github.io/
+## Qué incluye
 
-## ¿Qué hace?
+- Logo original de FoxHeart servido desde su [sitio oficial](https://foxheartof.github.io/assets/logo.png), con respaldo SVG local cuando no esté disponible.
+- Encabezado **Meet&Greet**.
+- **Ver Información** (principal dorado, con una animación suave de flotación): https://foxheartof.github.io/
+- **Comprar** (secundario rosado, con brillo animado): https://mpago.la/1xB6cLS
+- **Contactar por Telegram** (secundario): https://t.me/FoxHeart_OF
+- Diseño responsive, con buenas prácticas de accesibilidad y opción `prefers-reduced-motion`.
+- HTML + CSS estáticos. No se necesitan Node, npm, frameworks, cookies ni claves API.
 
-La página muestra un solo botón: **«Ver información y comprar boletos»**. Al pulsarlo, el visitante abre la ruta `/visitar` del micrositio, que lo redirige al sitio oficial de FoxHeart mediante una **redirección HTTP 302 estándar** configurada en Vercel.
+> Los pagos se realizan exclusivamente en Mercado Pago. Este micrositio no procesa ni almacena datos personales o de pago.
 
-Este comportamiento es el mismo para todos los visitantes, incluidos los sistemas automatizados. No hay contenido diferenciado, detección de bots ni mecanismos de ocultamiento del destino.
+## Subir a GitHub y publicar en Vercel
 
-## Características
+1. Extrae el ZIP y **sube el contenido de la carpeta** a la raíz de `foxheartof/vercel-link` (o al repositorio que esté conectado a Vercel).
+2. Confirma que `index.html`, `styles.css`, `vercel.json` y `assets/` queden en la raíz, sin una carpeta extra envolviéndolos.
+3. Vercel desplegará automáticamente si ya está conectado a la rama `main`. En un proyecto nuevo, importa el repositorio y selecciona **Other / No Framework**; no hace falta comando de compilación.
+4. Abre la URL de Vercel y prueba los tres enlaces tanto en móvil como en escritorio.
 
-- Una sola llamada a la acción (CTA), sin menús ni textos adicionales visibles.
-- Diseño responsive con la estética oscura y acentos dorados y rosas de FoxHeart.
-- HTML y CSS puros; sin frameworks ni JavaScript.
-- Sin cookies, seguimiento de usuarios, formularios ni procesamiento de pagos.
-- Redirección gestionada por Vercel en `vercel.json`.
+El viejo acceso `/visitar` continúa enviando al sitio oficial mediante una **redirección HTTP 302**. El nuevo botón principal apunta directamente a la URL oficial y funciona también en GitHub Pages. No hay encubrimiento ni diferenciación de destinos por tipo de visitante.
 
-## Publicar en Vercel
+### Publicar también en GitHub Pages (opcional)
 
-1. Crea un repositorio nuevo en GitHub y sube los archivos de esta carpeta a la raíz.
-2. En [Vercel](https://vercel.com/new), importa ese repositorio.
-3. Selecciona **Other** o **No Framework** cuando Vercel solicite un framework (no requiere build).
-4. Deja el directorio de salida en su valor predeterminado y haz clic en **Deploy**.
-5. Accede a la URL de Vercel y verifica que el botón abra el sitio oficial.
+Si prefieres actualizar `foxheartof/link`, sube este mismo contenido al repositorio y configura **Settings → Pages → Deploy from a branch → main / (root)**. Los estilos y el favicon usan rutas relativas para funcionar también bajo `/link/`. GitHub Pages no procesa `vercel.json`: la ruta antigua `/visitar` solo estará operativa en Vercel.
 
-Para cambiar el destino más adelante, actualiza la propiedad `destination` en `vercel.json` y vuelve a desplegar.
+## Personalización
 
-## Archivos
+| Archivo | Para qué sirve |
+| --- | --- |
+| `index.html` | Logo, textos, botones, URLs y metadatos. |
+| `styles.css` | Colores, composición, tamaños y animaciones CSS. |
+| `assets/favicon.svg` | Favicon independiente en rosa y dorado. |
+| `assets/logo-fallback.svg` | Respaldo del logo cuando falla la URL oficial. |
+| `vercel.json` | Compatibilidad con la ruta `/visitar` en Vercel. |
+
+La paleta reproduce los tonos del sitio oficial: fondo `#120c11`, rosa `#ff7ca9` y dorado `#f0c541`.
+
+### Si quieres alojar también el logo original dentro del repositorio
+
+Descarga el archivo **original** [`https://foxheartof.github.io/assets/logo.png`](https://foxheartof.github.io/assets/logo.png), guárdalo como `assets/logo.png` y cambia en `index.html` el valor de `src` de la imagen a `./assets/logo.png`. La versión entregada **ya funciona sin hacer este paso** porque usa la imagen del dominio oficial y dispone de respaldo local.
+
+## Probar localmente
+
+Puedes abrir `index.html` directamente. Para servirlo con un servidor local (opcional):
+
+```bash
+python3 -m http.server 8000
+```
+
+Después abre `http://localhost:8000/`.
+
+## Estructura
 
 ```text
 .
-├── index.html             # Página con un solo botón
-├── styles.css             # Estilos responsive
-├── vercel.json            # Redirección HTTP 302 desde /visitar
-├── assets/
-│   └── favicon.svg
-└── README.md
+├── .nojekyll
+├── index.html
+├── styles.css
+├── vercel.json
+├── README.md
+└── assets/
+    ├── favicon.svg
+    └── logo-fallback.svg
 ```
-
-> **Nota:** Una redirección 302 no impide que Meta u otros sistemas de revisión sigan la URL y analicen el sitio de destino. Revisa las políticas de las plataformas que utilices para promocionarlo.
